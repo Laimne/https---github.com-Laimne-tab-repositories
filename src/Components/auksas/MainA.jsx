@@ -12,13 +12,14 @@ function MainA() {
   const [modalInputs, setModalInputs] = useState({
     id: "",
     name: "",
-    class: "",
-    height: "",
+    svoris: "",
+    price: "",
+    kiekis: "",
   });
 //Read React
   useEffect(() => {
     axios
-      .get("http://localhost:3003/sodas")
+      .get("http://localhost:3003/metalai")
       .then((res) => {
         setTable(res.data);
       })
