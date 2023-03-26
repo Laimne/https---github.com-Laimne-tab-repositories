@@ -1,8 +1,8 @@
 import "./App.css";
 
 import {NavLink, BrowserRouter, Route, Routes } from  "react-router-dom"
-import MainA from "./Components/augalai/MainA"
-import MainO from "./Components/obelys/MainO"
+import MainA from "./Components/auksas/MainA"
+import MainO from "./Components/sidabras/MainO"
 function App() {
 
   

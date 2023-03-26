@@ -5,10 +5,10 @@ function Item({ data, modal, remove }) {
   
     return (
       <tr>
-        <td>{data.id}</td>
         <td>{data.name}</td>
-        <td>{data.class}</td>
-        <td>{data.height}</td>
+        <td>{data.svoris}</td>
+        <td>{data.price}</td>
+        <td>{data.kiekis}</td>
         <td> <button className="btn btn-primary" onClick={showEdit}>
           Edit
         </button> </td>

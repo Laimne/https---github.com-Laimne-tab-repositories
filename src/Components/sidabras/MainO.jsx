@@ -5,20 +5,20 @@ import List from "./List";
 import Modal from "./Modal";
 
 
-function MainA() {
+function MainO() {
   const [table, setTable] = useState([]);
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [showModal, setShowModal] = useState(false);
   const [modalInputs, setModalInputs] = useState({
-    id: "",
     name: "",
-    class: "",
-    height: "",
+    svoris: "",
+    price: "",
+    kiekis: "",
   });
 //Read React
   useEffect(() => {
     axios
-      .get("http://localhost:3003/obelis")
+      .get("http://localhost:3003/sidabras")
       .then((res) => {
         setTable(res.data);
       })
@@ -27,7 +27,7 @@ function MainA() {
 //Update React
   const edit = (item, id) => {
     setShowModal(false);
-    axios.put('http://localhost:3003/obelis/' + id, item)
+    axios.put('http://localhost:3003/sidabras/' + id, item)
     .then(res => {
         setLastUpdate(Date.now());
     })
@@ -36,7 +36,7 @@ function MainA() {
 
 //Delete React
 const remove = (item) => {
- axios.delete('http://localhost:3003/obelis/' + item.id)
+ axios.delete('http://localhost:3003/sidabras/' + item.id)
             .then(res => {
                 setLastUpdate(Date.now());
             })
@@ -58,15 +58,15 @@ const remove = (item) => {
         <div className="row justify-content-center">
           <div className="col-md-8">
             <div className="card">
-              <div className="card-header">Sodo augalai</div>
+              <div className="card-header">Sidabras ir Auksas</div>
               <div className="card-body">
                 <table className="table">
                   <tbody>
                   <tr>
-                    <th>Numeris</th>
-                    <th>Vardas</th>
-                    <th>Rusis</th>
-                    <th>Aukstis</th>
+                    <th>Pavadinimas</th>
+                    <th>Svoris</th>
+                    <th>Kaina</th>
+                    <th>Kiekis</th>
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
@@ -88,4 +88,4 @@ const remove = (item) => {
   );
 }
 
-export default MainA;
+export default MainO;

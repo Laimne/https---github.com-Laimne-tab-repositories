@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 function Modal({ showModal, hide, modalInputs, edit }) {
   const [inputs, setInputs] = useState({
     name: "",
-    class: "",
-    height: "",
+    svoris: "",
+    price: "",
+    kiekis: "",
   });
 
   const control = (e, what) => {
@@ -16,8 +17,9 @@ function Modal({ showModal, hide, modalInputs, edit }) {
   useEffect(() => {
     setInputs({
       name: modalInputs.name,
-      class: modalInputs.class,
-      height: modalInputs.height,
+      price: modalInputs.price,
+      svoris: modalInputs.svoris,
+      kiekis: modalInputs.kiekis,
     });
   }, [modalInputs]);
 
@@ -25,8 +27,9 @@ function Modal({ showModal, hide, modalInputs, edit }) {
     edit(
       {
         name: inputs.name,
-        class: inputs.class,
-        height: inputs.height,
+        price: inputs.price,
+        svoris: inputs.svoris,
+        kiekis: inputs.kiekis,
       },
       modalInputs.id
     );
@@ -49,7 +52,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLabel">
-              Edit X
+              Metalai
             </h5>
             <button
               type="button"
@@ -85,9 +88,9 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                   className="form-control"
                   type="text"
                   id="th3"
-                  value={inputs.class}
-                  onChange={(e) => control(e, "class")}
-                  placeholder="Enter class"
+                  value={inputs.price}
+                  onChange={(e) => control(e, "price")}
+                  placeholder="Enter price"
                 />
               </div>
 

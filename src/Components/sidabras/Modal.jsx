@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 function Modal({ showModal, hide, modalInputs, edit }) {
   const [inputs, setInputs] = useState({
     name: "",
-    class: "",
-    height: "",
+    svoris: "",
+    price: "",
+    kiekis: "",
   });
 
   const control = (e, what) => {
@@ -17,8 +18,9 @@ function Modal({ showModal, hide, modalInputs, edit }) {
     setInputs({
       
       name: modalInputs.name,
-      class: modalInputs.class,
-      height: modalInputs.height,
+      svoris: modalInputs.svoris,
+      price: modalInputs.price,
+      kiekis: modalInputs.kiekis,
     });
   }, [modalInputs]);
 
@@ -27,8 +29,9 @@ function Modal({ showModal, hide, modalInputs, edit }) {
       {
     
         name: inputs.name,
-        class: inputs.class,
-        height: inputs.height,
+        svoris: inputs.svoris,
+        price: inputs.price,
+        kiekis: inputs.kiekis,
       },
       modalInputs.id
     );
@@ -51,7 +54,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLabel">
-              Edit X
+              Edit Metalai
             </h5>
             <button
               type="button"
@@ -81,29 +84,29 @@ function Modal({ showModal, hide, modalInputs, edit }) {
               </div>
               <div className="form-group">
                 <label htmlFor="th3" className="col-form-label">
-                  class
+                  svoris
                 </label>
                 <input
                   className="form-control"
                   type="text"
                   id="th3"
-                  value={inputs.class}
-                  onChange={(e) => control(e, "class")}
-                  placeholder="Enter class"
+                  value={inputs.svoris}
+                  onChange={(e) => control(e, "svoris")}
+                  placeholder="Enter svoris"
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="th4" className="col-form-label">
-                  height
+                  price
                 </label>
                 <input
                   className="form-control"
                   type="text"
                   id="th4"
-                  value={inputs.height}
-                  onChange={(e) => control(e, "height")}
-                  placeholder="Enter height"
+                  value={inputs.price}
+                  onChange={(e) => control(e, "price")}
+                  placeholder="Enter price"
                 />
               </div>
 
